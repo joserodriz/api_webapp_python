@@ -22,13 +22,15 @@ from matplotlib.figure import Figure
 import matplotlib.image as mpimg
 
 
-def graficar(x, y):
+def graficar(x, y, ex, ey, tit):
     ''' 
         Crear el grafico que se desea mostrar en HTML
     '''
     fig, ax = plt.subplots(figsize=(16, 9))
     ax.plot(x, y)
-    ax.get_xaxis().set_visible(False)
+    plt.xlabel(ex)
+    plt.ylabel(ey)
+    plt.title(tit)
 
     # Convertir ese grafico en una imagen para enviar por HTTP
     # y mostrar en el HTML
